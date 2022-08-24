@@ -81,6 +81,17 @@ export class TecnicoUpdateComponent implements OnInit {
         next: response => {
           this.toast.success("Técnico editado com sucesso!", "Sucesso");
           this.router.navigate(["/tecnicos"]);
+        },
+        error: errorResponse => {
+          let errors = errorResponse.error.errors;
+          if(errors != undefined){
+            errors.forEach((error: any) => {
+              this.toast.error(error.message, "Erro")
+            });
+          }
+          else {
+            this.toast.error(errorResponse.error.message, "Erro");
+          }
         }
       });
     }
