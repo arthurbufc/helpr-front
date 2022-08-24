@@ -1,22 +1,22 @@
 <nav-bar>
     <ng-container>
-        <h2>Editar Técnico</h2>
+        <h2>Editar Cliente</h2>
         <form #form="ngForm" (ngSubmit)="update(form)">
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Nome</mat-label>
-                <input type="text" name="nome" matInput placeholder="Ex. Gabriel Braga" required maxlength="50" [(ngModel)]="tecnico.nome">
+                <input type="text" name="nome" matInput placeholder="Ex. Gabriel Braga" required maxlength="50" [(ngModel)]="cliente.nome">
             </mat-form-field>
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>CPF</mat-label>
-                <input type="text" name="cpf" matInput placeholder="Ex. 000.000.000-00" mask="000.000.000-00" required [(ngModel)]="tecnico.cpf">
+                <input type="text" name="cpf" matInput placeholder="Ex. 000.000.000-00" mask="000.000.000-00" required [(ngModel)]="cliente.cpf">
             </mat-form-field>
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>E-mail</mat-label>
-                <input type="email" name="email" matInput placeholder="Ex. gabriel@mail.com" required email maxlength="50" [(ngModel)]="tecnico.email">
+                <input type="email" name="email" matInput placeholder="Ex. gabriel@mail.com" required email maxlength="50" [(ngModel)]="cliente.email">
             </mat-form-field>
             <mat-form-field class="full-width" appearance="fill">
                 <mat-label>Senha</mat-label>
-                <input type="password" name="senha" matInput required="" minlength="3" [(ngModel)]="tecnico.senha">
+                <input type="password" name="senha" matInput required="" minlength="3" [(ngModel)]="cliente.senha">
             </mat-form-field>
 
             <section class="section">
@@ -26,7 +26,7 @@
             </section>
 
             <a routerLink="/tecnicos" type="button" mat-raised-button color="warn">Cancelar</a>
-            <button type="submit" mat-raised-button color="primary">Editar</button>
+            <button type="button" mat-raised-button color="primary">Editar</button>
         </form>
     </ng-container>
 </nav-bar>
