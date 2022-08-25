@@ -1,0 +1,45 @@
+<nav-bar>
+  <ng-container>
+    <h2>Adicionar chamado</h2>
+
+    <form [formGroup]="formChamado" (ngSubmit)="create()">
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Título</mat-label>
+        <input matInput formControlName="titulo">
+      </mat-form-field>
+
+      <div class="status-prioridade">
+        <mat-form-field appearance="fill">
+          <mat-label>Status</mat-label>
+          <mat-select formControlName="status">
+            <mat-option *ngFor="let status of statusList" [value]="status.value">{{status.title}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Prioridade</mat-label>
+          <mat-select formControlName="prioridade">
+            <mat-option *ngFor="let prioridade of prioridadeList" [value]="prioridade.value">{{prioridade.title}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Cliente</mat-label>
+        <mat-select formControlName="cliente">
+          <mat-option *ngFor="let cliente of clienteList" [value]="cliente.id">{{ cliente.nome }} </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="full-width">
+        <mat-label>Técnico</mat-label>
+        <mat-select formControlName="tecnico">
+          <mat-option *ngFor="let tecnico of tecnicoList" [value]="tecnico.id">{{ tecnico.nome }}</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="full-width" appearance="fill">
+        <mat-label>Observações</mat-label>
+        <textarea matInput class="description" formControlName="observacoes"></textarea>
+      </mat-form-field>
+      <button type="submit" mat-raised-button color="primary">Adicionar</button>
+      <a routerLink="/chamados" mat-raised-button color="warn">Cancelar</a>
+    </form>
+  </ng-container>
+</nav-bar>
