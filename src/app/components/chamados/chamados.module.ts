@@ -8,12 +8,16 @@ import { ChamadosComponent } from './chamados.component';
 import { MaterialModule } from 'src/app/shared/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ChamadoCreateComponent } from './childrens/chamado-create/chamado-create.component';
+import { ChamadoUpdateComponent } from './childrens/chamado-update/chamado-update.component';
+import { ChamadoDetailsComponent } from './childrens/chamado-details/chamado-details.component';
 
 
 @NgModule({
   declarations: [
     ChamadosComponent,
-    ChamadoCreateComponent
+    ChamadoCreateComponent,
+    ChamadoUpdateComponent,
+    ChamadoDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -26,7 +30,8 @@ import { ChamadoCreateComponent } from './childrens/chamado-create/chamado-creat
   ],
   exports: [
     ChamadosComponent,
-    ChamadoCreateComponent
+    ChamadoCreateComponent,
+    ChamadoUpdateComponent
   ]
 })
 export class ChamadosModule { }
